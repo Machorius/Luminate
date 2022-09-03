@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Audio/Ball/Cymatics x S1 - Percussion 5.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sprites/ball.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Ball.gd" type="Script" id=3]
+
+[sub_resource type="PhysicsMaterial" id=2]
+bounce = 0.9
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 100.0
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 0.04
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+flatness = 0.47
+gravity = Vector3( 0, 40, 0 )
+initial_velocity = 20.0
+initial_velocity_random = 0.07
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 20.0
+scale_random = 1.0
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -1.96
+scale = 20.0
+scale_random = 0.3
+
+[node name="PhysicsBody" type="RigidBody2D"]
+position = Vector2( 960, -300 )
+mass = 750.0
+physics_material_override = SubResource( 2 )
+contacts_reported = 10
+contact_monitor = true
+linear_velocity = Vector2( 0, 15 )
+linear_damp = 0.0
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -18.353
+pitch_scale = 0.7
+attenuation = 0.307786
+bus = "Balls"
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="Trail" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.239216 )
+amount = 25
+speed_scale = 2.0
+local_coords = false
+process_material = SubResource( 3 )
+
+[node name="Destroy" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.239216 )
+emitting = false
+amount = 50
+lifetime = 5.0
+one_shot = true
+speed_scale = 22.55
+explosiveness = 0.2
+local_coords = false
+process_material = SubResource( 4 )
+
+[connection signal="body_entered" from="." to="." method="_on_PhysicsBody_body_entered"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_Cooldown_timeout"]
