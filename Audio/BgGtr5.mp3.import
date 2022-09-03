@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BgGtr5.mp3-d7ed27334ce20e604ed28515d13ce3b2.mp3str"
+
+[deps]
+
+source_file="res://Audio/BgGtr5.mp3"
+dest_files=[ "res://.import/BgGtr5.mp3-d7ed27334ce20e604ed28515d13ce3b2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

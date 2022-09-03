@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cymatics x S1 - Percussion 5.wav-2be6416e579742cb0ff01eb509b2db3c.sample"
+
+[deps]
+
+source_file="res://Audio/Ball/Cymatics x S1 - Percussion 5.wav"
+dest_files=[ "res://.import/Cymatics x S1 - Percussion 5.wav-2be6416e579742cb0ff01eb509b2db3c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=1

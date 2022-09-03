@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bubbles_A#_major.wav-3d558b19d3a00e59e96a4d476b359da8.sample"
+
+[deps]
+
+source_file="res://Audio/Ball/bubbles_A#_major.wav"
+dest_files=[ "res://.import/bubbles_A#_major.wav-3d558b19d3a00e59e96a4d476b359da8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
