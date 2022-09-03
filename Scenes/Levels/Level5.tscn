@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/LevelManager.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Obstacles/Bar.tscn" type="PackedScene" id=3]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 630.0 ]
+}
+
+[node name="AllBalls" type="Node" parent="."]
+
+[node name="AllBlocks" type="Node" parent="."]
+
+[node name="Block" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 400, 400 )
+
+[node name="Block2" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 400, 680 )
+
+[node name="Block3" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 1520, 400 )
+
+[node name="Block4" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 1520, 680 )
+
+[node name="Block5" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 960, 560 )
+
+[node name="Block6" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 960, 300 )
+
+[node name="AllObstacles" type="Node" parent="."]
+
+[node name="Bar3" parent="AllObstacles" instance=ExtResource( 3 )]
+position = Vector2( 218, 430 )
+rotation = 1.5708
+
+[node name="Bar4" parent="AllObstacles" instance=ExtResource( 3 )]
+position = Vector2( 1698, 430 )
+rotation = 1.5708
+
+[node name="Bar5" parent="AllObstacles" instance=ExtResource( 3 )]
+position = Vector2( 782, 894 )
+rotation = -0.523599
+
+[node name="Bar6" parent="AllObstacles" instance=ExtResource( 3 )]
+position = Vector2( 1138, 894 )
+rotation = 0.523599

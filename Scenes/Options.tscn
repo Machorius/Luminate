@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Options.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/grabber.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 120.0, 240.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 240.0, 360.0, 480.0, 600.0, 720.0 ]
+}
+
+[node name="OptionsText" type="RichTextLabel" parent="."]
+margin_left = 240.0
+margin_top = 703.0
+margin_right = 1013.0
+margin_bottom = 832.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "music    sfx                master"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicSlider" type="VSlider" parent="."]
+margin_left = 240.0
+margin_top = 242.0
+margin_right = 359.0
+margin_bottom = 654.0
+custom_icons/grabber_disabled = ExtResource( 4 )
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 4 )
+min_value = -24.0
+max_value = 8.0
+tick_count = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SfxSlider" type="VSlider" parent="."]
+margin_left = 361.0
+margin_top = 242.0
+margin_right = 479.0
+margin_bottom = 654.0
+custom_icons/grabber_disabled = ExtResource( 4 )
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 4 )
+min_value = -24.0
+max_value = 8.0
+tick_count = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterSlider" type="VSlider" parent="."]
+margin_left = 601.0
+margin_top = 242.0
+margin_right = 719.0
+margin_bottom = 654.0
+custom_icons/grabber_disabled = ExtResource( 4 )
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 4 )
+min_value = -24.0
+max_value = 8.0
+tick_count = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1599, 859 )
+button_text = "go back"
+next_scene_res = "res://Scenes/Title.tscn"
+
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="SfxSlider" to="." method="_on_SfxSlider_value_changed"]
+[connection signal="value_changed" from="MasterSlider" to="." method="_on_MasterSlider_value_changed"]

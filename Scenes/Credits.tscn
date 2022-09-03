@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_horizontal_guides_": [ 960.0, 911.0, 120.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 120.0, 240.0, 360.0, 480.0, 600.0 ]
+}
+
+[node name="CreditText" type="RichTextLabel" parent="."]
+margin_left = 247.0
+margin_top = 809.0
+margin_right = 1020.0
+margin_bottom = 938.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "created by Luka Kuqo 2022
+Made in 24 hours"
+
+[node name="BackButton" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1599, 859 )
+button_text = "go back"
+next_scene_res = "res://Scenes/Title.tscn"

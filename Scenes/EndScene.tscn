@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/SocialButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Icons/github-brands.svg" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="EndScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ThanksText" type="RichTextLabel" parent="."]
+margin_left = 247.0
+margin_top = 562.0
+margin_right = 1081.0
+margin_bottom = 938.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Thank you for playing!
+
+If you enjoyed the game and would like me to keep adding new levels please add a comment on the Itch.io page!"
+fit_content_height = true
+
+[node name="BackButton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1599, 859 )
+button_text = "go back"
+next_scene_res = "res://Scenes/Title.tscn"
+
+[node name="GitHubButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 121 )
+scale = Vector2( 0.239919, 0.239919 )
+normal = ExtResource( 5 )
+url = "https://github.com/Machorius"

@@ -1,0 +1,56 @@
+[gd_resource type="AudioBusLayout" load_steps=4 format=2]
+
+[sub_resource type="AudioEffectReverb" id=1]
+resource_name = "Reverb"
+predelay_feedback = 0.58
+room_size = 0.92
+damping = 0.69
+spread = 0.66
+hipass = 0.76
+dry = 0.6
+wet = 1.0
+
+[sub_resource type="AudioEffectLowPassFilter" id=2]
+resource_name = "LowPassFilter"
+cutoff_hz = 800.0
+resonance = 0.45
+db = 1
+
+[sub_resource type="AudioEffectEQ" id=5]
+resource_name = "EQ"
+band_db/1000_hz = -26.3
+band_db/3200_hz = -37.2
+band_db/10000_hz = -55.4
+
+[resource]
+bus/0/volume_db = -0.130497
+bus/1/name = "BgMusic"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -9.63278
+bus/1/send = "Master"
+bus/1/effect/0/effect = SubResource( 1 )
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource( 2 )
+bus/1/effect/1/enabled = true
+bus/2/name = "Sfx"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = "Master"
+bus/3/name = "Blocks"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = "Sfx"
+bus/4/name = "Balls"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = -6.57885
+bus/4/send = "Sfx"
+bus/4/effect/0/effect = SubResource( 5 )
+bus/4/effect/0/enabled = true

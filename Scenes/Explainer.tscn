@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
+
+[node name="Node" type="Control"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 240.0, 960.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 240.0 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExplainText" type="RichTextLabel" parent="."]
+margin_left = 240.0
+margin_top = 240.0
+margin_right = 1013.0
+margin_bottom = 688.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "drag and drop the tiles to rearrange them in the level 
+
+illuminate all tiles to progress to the next level..."
+
+[node name="LevelBtn" parent="." instance=ExtResource( 1 )]
+position = Vector2( 241, 860 )
+button_text = "start"
+next_scene_res = "res://Scenes/Levels/Level1.tscn"
