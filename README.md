@@ -25,9 +25,9 @@ In this game there is no saving and continuing which makes it a perfect game for
 
 ### Installation
 
-There are a few ways to download, either go to the Itch.io page and get a copy or go to the releases tab on this project and download what is suitable for you.
+There are a few ways to download, either go to the Itch.io page and get a copy or run it with the source.
 
-1. You can also run it locally if you have Godot installed
+1. You can run it locally if you have Godot installed
 2. Clone the repo,
    ```sh
    git clone https://github.com/Machorius/Luminate.git
@@ -46,7 +46,7 @@ There are a few ways to download, either go to the Itch.io page and get a copy o
 - [x] Complete the structure of the game
 - [x] Import assets
 - [x] Release game source
-    - [ ] Release game on Github and Itch.io
+    - [ ] Release game on Itch.io
 
 See the [open issues](https://github.com/Machorius/Luminate/issues) for a full list of proposed features (and known issues).
 
